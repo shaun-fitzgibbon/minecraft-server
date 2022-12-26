@@ -1,7 +1,7 @@
 import os
 import boto3
 
-DEFAULT_REGION = 'us-west-2'
+DEFAULT_REGION = 'af-south-1'
 DEFAULT_CLUSTER = 'minecraft'
 DEFAULT_SERVICE = 'minecraft-server'
 
