@@ -1,4 +1,4 @@
-import { custom_resources as cr, aws_iam as iam } from 'aws-cdk-lib';
+import { custom_resources as cr, /* aws_iam as iam */ } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 
 interface SSMParameterReaderProps {

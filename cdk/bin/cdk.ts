@@ -11,8 +11,10 @@ const app = new cdk.App();
 const config = resolveConfig();
 
 if (!config.domainName) {
-  throw new Error('Missing required `DOMAIN_NAME` in .env file, please rename\
-    `.env.sample` to `.env` and add your domain name.');
+  throw new Error(
+    'Missing required `DOMAIN_NAME` in .env file, please rename\
+    `.env.sample` to `.env` and add your domain name.'
+  );
 }
 
 const domainStack = new DomainStack(app, 'minecraft-domain-stack', {

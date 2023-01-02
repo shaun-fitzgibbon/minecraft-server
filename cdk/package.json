@@ -1,5 +1,5 @@
 {
-  "name": "minecraft-ondemand",
+  "name": "minecraft-server",
   "version": "1.0.0",
   "bin": {
     "cdk": "bin/cdk.js"
@@ -7,21 +7,27 @@
   "scripts": {
     "prebuild": "npm ci",
     "build": "npx aws-cdk bootstrap",
+    "watch": "tsc -w",
     "deploy": "npx aws-cdk deploy --verbose --all",
     "destroy": "npx aws-cdk destroy --all",
-    "diff": "npx aws-cdk diff"
+    "diff": "npx aws-cdk diff",
+    "test": "jest",
+    "cdk": "cdk"
   },
   "devDependencies": {
     "@types/jest": "^29.2.4",
     "@types/node": "^18.11.17",
+    "aws-cdk": "2.57.0",
     "dotenv": "^16.0.3",
+    "jest": "^29.3.1",
+    "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4"
   },
   "dependencies": {
     "aws-cdk-lib": "^2.56.1",
     "constructs": "^10.1.200",
-    "execa": "^6.1.0",
+    "execa": "^5.1.1",
     "source-map-support": "^0.5.21"
   }
 }
