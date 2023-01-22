@@ -138,9 +138,11 @@ export class DomainStack extends Stack {
      * Create our log subscription filter to catch any log events containing
      * our subdomain name and send them to our launcher lambda.
      */
+    const dnsFilterPattern = `_${config.subdomainPart}._tcp.${config.subdomainPart}.${config.domainName}`;
+
     queryLogGroup.addSubscriptionFilter('SubscriptionFilter', {
       destination: new logDestinations.LambdaDestination(launcherLambda),
-      filterPattern: logs.FilterPattern.anyTerm(subdomain),
+      filterPattern: logs.FilterPattern.anyTerm(dnsFilterPattern),
     });
 
     /**
