@@ -166,4 +166,9 @@ export interface MinecraftEditionConfig {
    * The ingress rule port to be used for the service security group
    */
   ingressRulePort: Port;
+
+  /**
+   * The ingress rule port to be used for the rcon client
+   */
+  ingressRulePortRCON: Port;
 }
