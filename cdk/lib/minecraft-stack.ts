@@ -160,6 +160,11 @@ export class MinecraftStack extends Stack {
       minecraftServerConfig.ingressRulePort
     );
 
+    serviceSecurityGroup.addIngressRule(
+      ec2.Peer.anyIpv4(),
+      minecraftServerConfig.ingressRulePortRCON
+    );
+
     const minecraftServerService = new ecs.FargateService(
       this,
       'FargateService',

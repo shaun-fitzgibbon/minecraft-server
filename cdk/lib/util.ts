@@ -24,6 +24,7 @@ export const getMinecraftServerConfig = (
     port: 25565,
     protocol: Protocol.TCP,
     ingressRulePort: Port.tcp(25565),
+    ingressRulePortRCON: Port.tcp(25575),
   };
 
   const bedrockConfig = {
@@ -31,6 +32,7 @@ export const getMinecraftServerConfig = (
     port: 19132,
     protocol: Protocol.UDP,
     ingressRulePort: Port.udp(19132),
+    ingressRulePortRCON: Port.tcp(25575),
   };
 
   return edition === 'java' ? javaConfig : bedrockConfig;
