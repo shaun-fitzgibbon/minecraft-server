@@ -10,6 +10,7 @@
     "watch": "tsc -w",
     "deploy": "npx aws-cdk deploy --verbose --all",
     "destroy": "npx aws-cdk destroy --all",
+    "typecheck": "tsc --noEmit --watch",    
     "diff": "npx aws-cdk diff",
     "test": "jest",
     "cdk": "cdk"
@@ -25,7 +26,7 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "aws-cdk-lib": "^2.56.1",
+    "aws-cdk-lib": "^2.89.0",
     "constructs": "^10.1.200",
     "execa": "^5.1.1",
     "source-map-support": "^0.5.21"
