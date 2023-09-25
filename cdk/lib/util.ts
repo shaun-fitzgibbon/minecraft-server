@@ -1,6 +1,6 @@
 import { Port } from 'aws-cdk-lib/aws-ec2';
 import { Protocol } from 'aws-cdk-lib/aws-ecs';
-import * as execa from 'execa';
+import { execa } from 'execa';
 import { constants } from './constants';
 import { MinecraftEditionConfig, StackConfig } from './types';
 
@@ -9,7 +9,7 @@ export const stringAsBoolean = (str?: string): boolean =>
 
 export const isDockerInstalled = (): boolean => {
   try {
-    execa.sync('docker', ['version']);
+    execa('docker', ['version']);
     return true;
   } catch (e) {
     return false;
